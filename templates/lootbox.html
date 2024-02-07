@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+
+{% block title %}Lootboxes{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<div class="generator">
+    <h2>Lootbox Generator</h2>
+    <button><a href="/">Home</a></button>
+</div>
+<form action="">
+    <ul>
+        <li>
+            <ul class="inline-textinput">
+                <li>
+                    <label for="lootbox_name">Lootbox Name</label>
+                    <input type="text" id="lootbox_name" name="lootbox_name">
+                </li>
+                <li>
+                    <label for="panel_name">Panel Name</label>
+                    <input type="text" id="panel_name" name="panel_name">
+                </li>
+            </ul>
+        </li>
+    </ul>
+</form>
+{% endblock %}

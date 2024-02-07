@@ -1,0 +1,165 @@
+$wicked_cyan: #B9FFF2;
+$rested_cyan: #0FB894;
+$wicked_red: #FF0C63;
+$rested_red: #CC094F;
+$wicked_blue: #0C8AFF;
+$rested_blue: #0954CC;
+$wicked_bg: #101418;
+$rested_fg: #FFF9EB;
+
+$minecraft_border: #2C0863;
+$minecraft_background: #170D1C;
+
+$minecraft_black: #000000;
+$minecraft_blue: #0000AA;
+$minecraft_green: #00AA00;
+$minecraft_cyan: #00AAAA;
+$minecraft_red: #AA0000;
+$minecraft_pink: #AA00AA;
+$minecraft_yellow: #FFAA00;
+$minecraft_white: #AAAAAA;
+$minecraft_bright_black: #555555;
+$minecraft_bright_blue: #5555FF;
+$minecraft_bright_green: #55FF55;
+$minecraft_bright_cyan: #55FFFF;
+$minecraft_bright_red: #FF5555;
+$minecraft_bright_pink: #FF55FF;
+$minecraft_bright_yellow: #FFFF55;
+$minecraft_bright_white: #FFFFFF;
+
+
+@font-face {
+  font-family: "ProFont";
+  src: url('/static/fonts/ProFont.ttf');
+  src: url('/static/fonts/ProFont.ttf') format('truetype')
+}
+@font-face {
+  font-family: "Minecraftia";
+  src: url('/static/fonts/Minecraftia-Regular.ttf');
+  src: url('/static/fonts/Minecraftia-Regular.ttf') format('truetype')
+}
+
+
+body {
+  font-family: "ProFont";
+  font-size: 100%;
+  font-weight: normal;
+  color: $rested_fg;
+  background-color: $wicked_bg;
+  margin: 0;
+}
+
+header {
+  color: $wicked_bg;
+  background-color: $rested_fg;
+  margin: 0;
+  padding: 3em;
+  h1 {
+    font-size: 3em;
+    margin: inherit;
+  }
+}
+
+.generator {
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  button {
+    font-family: inherit;
+    font-size: 2.5em;
+    color: $rested_fg;
+    background-color: $wicked_bg;
+    padding: 0.5em;
+    border: 2px solid $rested_fg;
+
+    &:hover {
+      color: $wicked_bg;
+      background-color: $rested_fg;
+    }
+  }
+}
+
+form {
+    margin: 3rem;
+    padding: 2rem;
+    border: 2px solid $rested_fg;
+    min-width: 15rem;
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    
+
+        li {
+            display: flex;
+            flex-direction: column;
+      
+            .inline-textinput {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                li {
+                    flex-grow: 1;
+                    min-width: 1rem;
+
+                    label {
+                        font-size: 1.5rem;
+                    }
+
+                    input {
+                        font-family: ProFont;
+                        font-size: 1.5rem;
+                        color: $wicked_bg;
+                        background-color: $rested_fg;
+                        border: 6px double $wicked_bg;
+                        padding: 0.5rem;
+                    }
+
+                    .input_preview {
+                        font-family: Minecraftia;
+                       font-size: 1.5rem;
+                        height: 2rem;
+                        color: $minecraft_pink;
+                        background-color: $minecraft_background;
+                        border: 3px solid $minecraft_border;
+                        padding: 0.5rem;
+                    }
+                }
+                
+            }
+
+            label {
+                font-size: 1.5rem;
+            }
+
+            input {
+                font-family: ProFont;
+                font-size: 1.5rem;
+                color: $wicked_bg;
+                background-color: $rested_fg;
+                border: 6px double $wicked_bg;
+                padding: 0.5rem;
+            }
+
+            .input_preview {
+                font-family: Minecraftia;
+                font-size: 1.5rem;
+                height: 2rem;
+                color: $minecraft_pink;
+                background-color: $minecraft_background;
+                border: 3px solid $minecraft_border;
+                padding: 0.5rem;
+            }
+        }
+    }
+}
