@@ -17,20 +17,19 @@
     </button>
 </div>
 
-<form action="">
-    <ul>
-        <li>
-            <ul class="inline-textinput">
-                <li>
-                    <label for="lootbox_name">Lootbox Name</label>
-                    <input type="text" id="lootbox_name" name="lootbox_name">
-                </li>
-                <li>
-                    <label for="panel_name">Panel Name</label>
-                    <input type="text" id="panel_name" name="panel_name">
-                </li>
-            </ul>
-        </li>
-    </ul>
+<form onkeydown="return event.key != 'Enter';">
+    <div class="inline-textinput">
+        <p>
+            <label for="lootbox_name">Lootbox Name</label>
+            <input type="text" id="lootbox_name" name="lootbox_name">
+        </p>
+        <p>
+            <label for="panel_name">Panel Name</label>
+            <input type="text" id="panel_name" name="panel_name">
+        </p>
+    </div>
+    <button hx-post="/api/gen_lootbox"
+        hx-swap="none"
+        >Generate Lootbox</button>
 </form>
 {% endblock %}

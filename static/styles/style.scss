@@ -64,6 +64,7 @@ header {
   margin: 1rem;
   padding: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   
@@ -98,50 +99,18 @@ form {
     padding: 2rem;
     border: 2px solid $rested_fg;
     min-width: 15rem;
-
-    ul {
-        padding: 0;
-        list-style-type: none;
     
+    .inline-textinput{
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
 
-        li {
+        p {
             display: flex;
             flex-direction: column;
-      
-            .inline-textinput {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-
-                li {
-                    flex-grow: 1;
-                    min-width: 1rem;
-
-                    label {
-                        font-size: 1.5rem;
-                    }
-
-                    input {
-                        font-family: ProFont;
-                        font-size: 1.5rem;
-                        color: $wicked_bg;
-                        background-color: $rested_fg;
-                        border: 6px double $wicked_bg;
-                        padding: 0.5rem;
-                    }
-
-                    .input_preview {
-                        font-family: Minecraftia;
-                       font-size: 1.5rem;
-                        height: 2rem;
-                        color: $minecraft_pink;
-                        background-color: $minecraft_background;
-                        border: 3px solid $minecraft_border;
-                        padding: 0.5rem;
-                    }
-                }
-                
-            }
+            flex-grow: 1;
+            min-width: 1rem;
 
             label {
                 font-size: 1.5rem;
@@ -166,5 +135,28 @@ form {
                 padding: 0.5rem;
             }
         }
+    }
+
+    label {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-family: ProFont;
+        font-size: 1.5rem;
+        color: $wicked_bg;
+        background-color: $rested_fg;
+        border: 6px double $wicked_bg;
+        padding: 0.5rem;
+    }
+
+    .input_preview {
+        font-family: Minecraftia;
+        font-size: 1.5rem;
+        height: 2rem;
+        color: $minecraft_pink;
+        background-color: $minecraft_background;
+        border: 3px solid $minecraft_border;
+        padding: 0.5rem;
     }
 }
