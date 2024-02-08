@@ -10,9 +10,19 @@ anyhow = "1.0.79"
 askama = { version = "0.12.1", features = ["with-axum"] }
 askama_axum = "0.4.0"
 axum = "0.7.4"
+lazy_static = "1.4.0"
+serde = { version = "1.0.196", features = ["derive"] }
 tokio = { version = "1.36.0", features = ["full"] }
 tower = "0.4.13"
 tower-http = { version = "0.5.1", features = ["fs"] }
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 turf = "0.7.1"
+
+[package.metadata.turf.class_names]
+template = "<original_name>"
+
+[package.metadata.turf.browser_targets]
+chrome = [80, 1, 2]
+firefox = 65
+safari = [12, 3]

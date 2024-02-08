@@ -73,7 +73,9 @@ header {
     margin: 0;
   }
   
-  button {
+}
+
+button {
     font-family: inherit;
     font-size: 2.5em;
     color: $rested_fg;
@@ -81,11 +83,14 @@ header {
     padding: 0.5em;
     border: 2px solid $rested_fg;
 
-    &:hover {
-      color: $wicked_bg;
-      background-color: $rested_fg;
+    a {
+        color: $rested_fg;
     }
-  }
+
+    &:hover {
+        color: $wicked_bg;
+        background-color: $rested_fg;
+    }
 }
 
 form {

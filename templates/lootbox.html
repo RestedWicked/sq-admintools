@@ -1,15 +1,22 @@
-
 {% extends "base.html" %}
-
 
 {% block title %}Lootboxes{% endblock %}
 
 {% block content %}
+
 {% include "header.html" %}
+
 <div class="generator">
     <h2>Lootbox Generator</h2>
-    <button><a href="/">Home</a></button>
+    <button 
+        hx-get="/" 
+        hx-target="body" 
+        hx-swap="outerHTML" 
+        hx-replace-url="true">
+        Home
+    </button>
 </div>
+
 <form action="">
     <ul>
         <li>

@@ -4,5 +4,13 @@
 
 {% block content %}
 {% include "header.html" %}
-<button><a href="/lootbox">Lootbox Generator</a></button>
+<nav>
+    <button 
+        hx-get="/lootbox" 
+        hx-target="body" 
+        hx-swap="outerHTML" 
+        hx-replace-url="true">
+        lootbox    
+    </button>
+</nav>
 {% endblock %}
