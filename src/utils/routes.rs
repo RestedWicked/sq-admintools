@@ -1,22 +1,17 @@
-use crate::utils::template::HtmlTemplate;
-
 use askama::Template;
-use axum::response::IntoResponse;
 
-pub async fn sq_index() -> impl IntoResponse {
-    let template = IndexTemplate {};
-    HtmlTemplate(template)
+pub async fn sq_index() -> IndexTemplate {
+    IndexTemplate {}
 }
 
 #[derive(Template)]
 #[template(path = "index.html")]
-struct IndexTemplate;
+pub struct IndexTemplate;
 
-pub async fn sq_lootbox() -> impl IntoResponse {
-    let template = LootboxTemplate {};
-    HtmlTemplate(template)
+pub async fn sq_lootbox() -> LootboxTemplate {
+    LootboxTemplate {}
 }
 
 #[derive(Template)]
 #[template(path = "lootbox.html")]
-struct LootboxTemplate;
+pub struct LootboxTemplate;

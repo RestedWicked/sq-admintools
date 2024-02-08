@@ -1,8 +1,12 @@
 use crate::utils::routes::*;
 
 use anyhow::Context;
+#[allow(unused_imports)]
 use axum::{
-    routing::get,
+    routing::{
+        get,
+        post,
+    },
     Router,
 };
 #[allow(unused_imports)]
@@ -15,8 +19,10 @@ pub async fn app() -> anyhow::Result<()> {
 
     let static_path = std::env::current_dir().unwrap();
     let app = Router::new()
+        // Routes
         .route("/", get(sq_index))
         .route("/lootbox", get(sq_lootbox))
+        // File Server
         .nest_service(
             "/static",
             ServeDir::new(format!("{}/static", static_path.to_str().unwrap())),
