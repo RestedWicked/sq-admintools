@@ -1,5 +1,6 @@
 use crate::utils::routes::*;
 use crate::utils::settings::Settings;
+use crate::api::lootbox_gen::gen_lootbox;
 
 
 use anyhow::Context;
@@ -33,7 +34,11 @@ async fn api() -> Router {
     Router::new()
         .route("/gen_lootbox", post(gen_lootbox))
 }
-
+/*
+async fn gen_lootbo() {
+    info!("Lootbo!")
+}
+*/
 pub async fn app() -> anyhow::Result<()> {
     info!("Initializing Router!");
 

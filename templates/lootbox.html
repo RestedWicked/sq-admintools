@@ -20,14 +20,46 @@
 <form onkeydown="return event.key != 'Enter';">
     <div class="inline-textinput">
         <p>
-            <label for="lootbox_name">Lootbox Name</label>
-            <input type="text" id="lootbox_name" name="lootbox_name">
-        </p>
-        <p>
             <label for="panel_name">Panel Name</label>
             <input type="text" id="panel_name" name="panel_name">
         </p>
+        <p>
+            <label for="panel_title">Panel Title</label>
+            <input type="text" id="panel_title" name="panel_title">
+        </p>
     </div>
+    <div class="inline-textinput">
+        <label for="lootbox_type">Lootbox Type</label>
+        <select name="lootbox_type" id="lootbox_type">
+            <Option value="Standard">Standard</Option>
+            <Option value="Teaser">Teaser</Option>
+        </select>
+    </div>
+    <label for="commands_on_open">Commands on Open: </label>
+    <input type="text" name="commands_on_open">
+    <input type="text" name="commands_on_open">
+    <input type="text" name="commands_on_open">
+    <label for="material">Material: </label>
+    <input type="text" name="material">
+    <fieldset>
+        <legend>Has Section</legend>
+        <select  name="item_has[0]main_loot_type">
+            <option value="IGC">Igc</option>
+            <option value="SQUID">squid</option>
+            <option value="COMMAND">Command</option>
+            <option value="PERM">perm</option>
+        </select>
+        <input type="text" name="item_has[0]loot_name">
+    </fieldset>
+    <fieldset>
+        <select  name="item_has[1]main_loot_type">
+            <option value="IGC">Igc</option>
+            <option value="SQUID">squid</option>
+            <option value="COMMAND">Command</option>
+            <option value="PERM">perm</option>
+        </select>
+        <input type="text" name="item_has[1]loot_name">
+    </fieldset>
     <button hx-post="/api/gen_lootbox"
         hx-swap="none"
         >Generate Lootbox</button>
