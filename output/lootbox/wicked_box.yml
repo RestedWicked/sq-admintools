@@ -1,20 +1,33 @@
-panel_name: wicked_box
-panel_title: '&8Wicked Box'
-lootbox_type: Standard
-commands_on_open:
-- bat
-- cat
-- rat
-material: STONE
-item_hover: '&fClick to Open!'
-item_commands: []
-perm: default
-rows: DROPPER
-panel_type:
-- unclosable
-- nocommand
-item_slot: '4'
-item_has[0]main_loot_type: IGC
-item_has[0]loot_name: Boot Name
-item_has[1]main_loot_type: SQUID
-item_has[1]loot_name: Root Name
+panels:
+  wicked_box:
+    perm: default
+    rows: DROPPER
+    title: '&8Wicked Box'
+    commands-on-open:
+    - set-data= chance %cp-random-1,133%
+    - bat
+    - rat
+    - cat
+    panel_type:
+    - unclosable
+    - nocommand
+    item:
+      '4':
+        material: STONE
+        name: '&fClick to Open!'
+        has0:
+          value0: 1
+          compare0: '&cp-data-chance&'
+          material: STONE
+          stack: 1
+          name: Boot Name
+          commands:
+          - Placeholder
+        has1:
+          value0: 2
+          compare0: '&cp-data-chance&'
+          material: STONE
+          stack: 1
+          name: Root Name
+          commands:
+          - Placeholder

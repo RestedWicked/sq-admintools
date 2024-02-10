@@ -14,6 +14,7 @@ axum-extra = { version = "0.9.2", features = ["form"] }
 lazy_static = "1.4.0"
 linked-hash-map = { version = "0.5.6", features = ["serde_impl"] }
 serde = { version = "1.0.196", features = ["derive"] }
+serde_qs = { git = "https://github.com/Wicpar/serde_qs.git", features = ["axum"] }
 serde_yaml = "0.9.31"
 tokio = { version = "1.36.0", features = ["full"] }
 tower = "0.4.13"

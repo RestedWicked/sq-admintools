@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+
+{% block title %}API TEST{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<form onkeydown="return event.key != 'Enter';">
+    <button type="submit" disabled style="display: none" aria-hidden="true"></button>
+    <p>
+        <label for="id">ID</label>
+        <input type="text"  name="id[0]">
+        <input type="text"  name="id[1]">
+        <input type="text"  name="id[2]">
+        <input type="text"  name="id[3]">
+    </p>
+    <fieldset>
+        <legend>Test Struct</legend>
+        <input type="text" name="teststruct[0][city]">
+    </fieldset>
+    <fieldset>
+        <legend>Test Struct</legend>
+        <input type="text" name="teststruct[1][city]">
+    </fieldset>
+    <button 
+        hx-post="/api/test/query" 
+        hx-swap="none">
+        API TEST   
+    </button>
+</form>
+{% endblock %}

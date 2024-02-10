@@ -17,4 +17,11 @@ pub async fn sq_lootbox() -> LootboxTemplate {
 #[template(path = "lootbox.html")]
 pub struct LootboxTemplate;
 
+pub async fn sq_test() -> TestTemplate {
+    TestTemplate {}
+}
+
+#[derive(Template)]
+#[template(path = "test.html")]
+pub struct TestTemplate;
 

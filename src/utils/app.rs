@@ -1,7 +1,7 @@
 use crate::utils::routes::*;
 use crate::utils::settings::Settings;
 use crate::api::lootbox_gen::gen_lootbox;
-
+use crate::api::query_test::test_query;
 
 use anyhow::Context;
 #[allow(unused_imports)]
@@ -10,6 +10,7 @@ use axum::{
         get,
         post,
     },
+    body::Body,
     Router,
 };
 use lazy_static::lazy_static;
@@ -31,8 +32,9 @@ lazy_static! {
 }
 
 async fn api() -> Router {
-    Router::new()
-        .route("/gen_lootbox", post(gen_lootbox))
+    Router::<()>::new()
+        .nest("/test", test_query().await)
+        .route("/generate/lootbox", post(gen_lootbox))
 }
 /*
 async fn gen_lootbo() {
@@ -48,6 +50,7 @@ pub async fn app() -> anyhow::Result<()> {
         // Routes
         .route("/", get(sq_index))
         .route("/lootbox", get(sq_lootbox))
+        .route("/test", get(sq_test))
         // File Server
         .nest_service(
             "/static",

@@ -36,31 +36,32 @@
         </select>
     </div>
     <label for="commands_on_open">Commands on Open: </label>
-    <input type="text" name="commands_on_open">
-    <input type="text" name="commands_on_open">
-    <input type="text" name="commands_on_open">
+    <input type="text" name="commands_on_open[0]">
+    <input type="text" name="commands_on_open[1]">
+    <input type="text" name="commands_on_open[2]">
     <label for="material">Material: </label>
     <input type="text" name="material">
     <fieldset>
         <legend>Has Section</legend>
-        <select  name="item_has[0]main_loot_type">
+        <select  name="item_has[0][main_loot_type]">
             <option value="IGC">Igc</option>
             <option value="SQUID">squid</option>
             <option value="COMMAND">Command</option>
             <option value="PERM">perm</option>
         </select>
-        <input type="text" name="item_has[0]loot_name">
+        <input type="text" name="item_has[0][loot_name]">
     </fieldset>
     <fieldset>
-        <select  name="item_has[1]main_loot_type">
+        <legend>Has Section</legend>
+        <select  name="item_has[1][main_loot_type]">
             <option value="IGC">Igc</option>
             <option value="SQUID">squid</option>
             <option value="COMMAND">Command</option>
             <option value="PERM">perm</option>
         </select>
-        <input type="text" name="item_has[1]loot_name">
+        <input type="text" name="item_has[1][loot_name]">
     </fieldset>
-    <button hx-post="/api/gen_lootbox"
+    <button hx-post="/api/generate/lootbox"
         hx-swap="none"
         >Generate Lootbox</button>
 </form>
