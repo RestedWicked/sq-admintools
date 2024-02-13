@@ -22,12 +22,16 @@ panels:
           stack: 1
           name: Boot Name
           commands:
-          - Placeholder
+          - Gy
+          - A
+          - TT
         has1:
           value0: 2
           compare0: '&cp-data-chance&'
-          material: STONE
+          material: WOOD
           stack: 1
           name: Root Name
           commands:
-          - Placeholder
+          - Da
+          - Yu
+          - MM

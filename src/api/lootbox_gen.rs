@@ -59,13 +59,13 @@ enum LootboxType {
 struct Loot {
     main_loot_type: LootType,
     loot_name: String,
-    //    #[serde(default)]
-    //    loot_commands: Vec<LootCommand>,
-    //    loot_material: String,
-    //    loot_repeats: u32,
-    //    loot_min: u32,
-    //    loot_max: u32,
-    //    loot_step: u32,
+    #[serde(default)]
+    loot_commands: Vec<LootCommand>,
+    loot_material: String,
+    loot_repeats: i32,
+    loot_min: i32,
+    loot_max: i32,
+    loot_step: i32,
 }
 
 #[derive(Deserialize, Serialize, Debug)]
@@ -89,7 +89,7 @@ impl FromStr for LootType {
     }
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize, Debug)]
 struct LootCommand {
     loot_type: LootType,
     loot_command: String,
@@ -150,13 +150,17 @@ pub async fn gen_lootbox(body: Bytes) {
     let mut has = LinkedHashMap::new();
 
     for (i, loot) in panel_bplate.item_has.iter().enumerate() {
+        let mut commands = Vec::new();
+        for command in loot.loot_commands.iter() {
+            commands.push(command.loot_command.clone());
+        }
         let section = HasSection {
             value0: i + 1,
             compare0: "&cp-data-chance&".to_string(),
-            material: "STONE".to_string(),
+            material: loot.loot_material.clone(),
             stack: 1,
             name: loot.loot_name.clone(),
-            commands: vec!["Placeholder".to_string()],
+            commands,
         };
         has.insert(format!("has{}",i), section);
     }
